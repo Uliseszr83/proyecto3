@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html> 
+ <head>
+    <title>Bola Magica</title> 
+</head>
+ <body>
+    <p align="center"> 
+ <!--This draws the Canvas on the webpage -->
+      <canvas id="mycanvas"></canvas> 
+    </p>
+ </body>
+ 
+ 
+ <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+ 
+ <script>
+    var sketchProc = function(processingInstance) {
+     with (processingInstance) {
+        size(700, 500); 
+        frameRate(30);
+  
+        fill(0, 0, 0);
+ellipse(200, 200, 375, 375);
+fill(60, 0, 255);
+triangle(200, 104, 280, 280, 120, 280);
+fill(255, 255, 255);
+var answer = floor(random(1, 6));
+if (answer === 0) {
+    text("NOT YET", 176, 200);
+    text("IMPLEMENTED", 159, 229); 
+}
+
+else if(answer===1){
+    
+    text("Buena Suerte", 164, 200);
+    text("EL dia de hoy", 159, 229);
+}
+
+else if(answer===2){
+    text("No importa", 167, 200);
+    text("El pasado", 170, 229);
+}
+
+else if(answer ===3){
+    text("Habra Nuevos", 165, 200);
+    text("Descubrimientos", 159, 229);
+    
+}
+else if(answer ===4){
+    text("No cuentes", 172, 200);
+    text("Con ello", 178, 229);
+
+}
+else if(answer ===5){
+
+text("Dia", 191, 200);
+    text("Maravilloso", 174, 229);
+
+} 
+  
+    }};
+
+    // Get the canvas that Processing-js will use
+    var canvas = document.getElementById("mycanvas"); 
+    // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    var processingInstance = new Processing(canvas, sketchProc); 
+ </script>
+
+</html>
